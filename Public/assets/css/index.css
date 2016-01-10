@@ -227,7 +227,7 @@ html {
 	left:100px;
 	}
 
-.gamedetail .roomlist .gameroom .ready{
+.main .ready{
 	background:url(../images/playeron.png);
 	background-size:100%;
 }
@@ -341,3 +341,11 @@ html {
 	left:46%;
 	background:url(../images/player.png) no-repeat;
 	}
+.main .roomdetail .readyleft{
+	background:url(../images/playerlefton.png);
+	background-size:100%;
+}
+.main .roomdetail .readyright{
+	background:url(../images/playerrighton.png);
+	background-size:100%;
+}
