@@ -21,7 +21,7 @@ window.core = (function($,base_url,root_url){
 				console.log("网络异常"+textStatus);	
 				if(textStatus=='timeout'){
 					console.log("请求超时，正在重试");
-					window.core.ajax(this);
+					$.ajax(this);
 				}
 			},
 			err: function(jso){	
@@ -54,7 +54,7 @@ window.core = (function($,base_url,root_url){
 	var loop = function(){
 		var str = "core.page."+nowpage+".ref()";	
 		eval(str);
-		console.log(str);
+		//console.log(str);
 	}
 	
 	/*
