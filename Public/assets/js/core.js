@@ -15,7 +15,7 @@ window.core = (function($,base_url,root_url){
 			type: 'POST',
 			dataType: 'json',
 			cache: false,
-			timeout: 1500,//毫秒
+			timeout: 5000,//毫秒
 			ok: function(){},
 			error: function(XMLHttpRequest, textStatus, errorThrown){
 				console.log("网络异常"+textStatus);	
@@ -236,17 +236,29 @@ window.core = (function($,base_url,root_url){
 		var ref = function(){init_f(false)};
 		
 		var ready = function(){
+			function drawready(){
+				isready = false;
+				$(".gameready").html("准&nbsp;&nbsp;备");
+				$(".myselfleft").removeClass("ready");
+				$(".myselfright").removeClass("ready");
+				$(".myself").removeClass("ready");
+			}
+			function drawnoready(){
+				isready = true;
+				$(".gameready").html("取&nbsp;消&nbsp;准&nbsp;备");
+				$(".myselfleft").addClass("ready");
+				$(".myselfright").addClass("ready");
+				$(".myself").addClass("ready");
+			}
 			if(isready){
 				core.ajax({
 					url: "One/noready",
 					data: {room_id:core.data.one.room_id},
 					ok: function(data){
 						if(data==1){
-							isready = false;
-							$(".gameready").html("准&nbsp;&nbsp;备");
-							$(".myselfleft").removeClass("ready");
-							$(".myselfright").removeClass("ready");
-							$(".myself").removeClass("ready");
+							drawready();
+						}else{
+							drawnoready();	
 						}
 					},
 				});
@@ -256,11 +268,9 @@ window.core = (function($,base_url,root_url){
 					data: {room_id:core.data.one.room_id},
 					ok: function(data){
 						if(data==1){
-							isready = true;
-							$(".gameready").html("取&nbsp;消&nbsp;准&nbsp;备");
-							$(".myselfleft").addClass("ready");
-							$(".myselfright").addClass("ready");
-							$(".myself").addClass("ready");
+							drawnoready();	
+						}else{
+							drawready();	
 						}
 					},
 				});
