@@ -1,4 +1,4 @@
-window.core = (function($,base_url){
+window.core = (function($,base_url,root_url){
 	var pagedata = ['game','room'];
 	var def = {
 		game_img: "/Public/assets/images/game.png",	
@@ -123,6 +123,6 @@ window.core = (function($,base_url){
 			page: page,
 			ajax: ajax,
 		};
-})($,window.base_url);
+})($,window.base_url,root_url);
 
 
