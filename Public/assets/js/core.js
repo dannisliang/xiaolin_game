@@ -301,7 +301,7 @@ window.core = (function($,base_url,root_url){
 	
 	var init = function(){
 		this.page.game.init();
-		loopid = setInterval(core.loop,700);
+		loopid = setInterval(core.loop,900);
 	}
 	return {
 		data: {},
