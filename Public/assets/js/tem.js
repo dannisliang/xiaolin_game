@@ -44,7 +44,7 @@ tem.one = '<div class="roomname"><span>{{game_name}}</span>---房间{{room_id}}<
 '					<a href="javascript:core.page.one.out_room();fsvs.slideUp()">退出房间</a>'+
 '				</div>'+
 '				<div class="gamebtn">'+
-'					<button class="gameready">准&nbsp;&nbsp;备</button>'+
+'					<button class="gameready" onclick="core.page.one.ready()">准&nbsp;&nbsp;备</button>'+
 '				</div>'+
 '				<div style="clear:both"></div>'+
 '				<div class="roomdet_con">'+

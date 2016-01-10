@@ -23,4 +23,19 @@ class OneController extends CommController
 		$rs = $urM->out_room(UID);
 		$this->ok($rs);
     }
+	
+	public function ready(){
+		$room_id = I("post.room_id",0);
+		$urM = D("UserRoom");
+		$rs = $urM->ready(UID, $room_id);
+		$this->ok($rs);
+	}
+	
+	public function noready(){
+		$room_id = I("post.room_id",0);
+		$urM = D("UserRoom");
+		$rs = $urM->noready(UID, $room_id);
+		$this->ok($rs);
+	
+	}
 }

@@ -37,5 +37,32 @@ class UserRoomModel extends CommModel {
 		return $this->where(" user_id = '{$user_id}'")->delete();
 	}
 	
+	public function ready($user_id, $room_id){
+		$rs = $this->where(" user_id = '{$user_id}' and  room_id = '{$room_id}' ")->save(array('ready'=>1));
+		if($this->is_all_ready($room_id)){
+			//D("Action")->begin();
+			return 5;
+		}
+		return $rs;
+	}
+	
+	public function noready($user_id, $room_id){
+		$rs = $this->where(" user_id = '{$user_id}' and  room_id = '{$room_id}' ")->save(array('ready'=>0));
+		return $rs;
+	}
+	
+	public function is_all_ready($room_id){
+		$list = $this->where(" room_id = '{$room_id}' ")->select();
+		if(count($list)<2){
+			return false;
+		}
+		foreach($list as $low){
+			if($low['ready']==0){
+				return false;
+			}
+		}
+		return true;
+	}
+	
 	
 }

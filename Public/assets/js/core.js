@@ -138,6 +138,8 @@ window.core = (function($,base_url,root_url){
 	*
 	*/
 	var p_one = (function(){
+		
+		var isready = false;
 		var init = function(){
 			core.ajax({
 				url: "One/into_room",
@@ -205,15 +207,49 @@ window.core = (function($,base_url,root_url){
 			});				   
 		}
 		
+		var ready = function(){
+			if(isready){
+				core.ajax({
+					url: "One/noready",
+					data: {room_id:core.data.one.room_id},
+					ok: function(data){
+						if(data==1){
+							isready = false;
+							$(".gameready").html("准&nbsp;&nbsp;备");
+							$(".myselfleft").removeClass("ready");
+							$(".myselfright").removeClass("ready");
+							$(".myself").removeClass("ready");
+						}
+					},
+				});
+			}else{
+				core.ajax({
+					url: "One/ready",
+					data: {room_id:core.data.one.room_id},
+					ok: function(data){
+						if(data==1){
+							isready = true;
+							$(".gameready").html("取&nbsp;消&nbsp;准&nbsp;备");
+							$(".myselfleft").addClass("ready");
+							$(".myselfright").addClass("ready");
+							$(".myself").addClass("ready");
+						}
+					},
+				});
+			}
+		}
+		
 		var out_room = function (){
 			core.ajax({
 				url: "One/out_room",
+				success: core.page.room.init,
 			});
 			
 		}
 		
 		return {
 			init:init,
+			ready:ready,
 			out_room:out_room,
 		}
 	})();
