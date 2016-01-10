@@ -1,9 +1,10 @@
 window.core = (function($,base_url,root_url){
-	var pagedata = ['game','room'];
+	var pagedata = ['game','room','one'];
 	var def = {
 		game_img: "/Public/assets/images/game.png",	
 		
 	}
+	
 	var ajax = function(opt){
 		var progressBar = new ToProgress();
 		progressBar.increase(20);
@@ -45,6 +46,12 @@ window.core = (function($,base_url,root_url){
 		eval(str);
 	}
 	
+	/*
+	*
+	*
+	*
+	*/
+	
 	var p_game = (function(){
 		var init = function(){
 			core.ajax({
@@ -74,12 +81,17 @@ window.core = (function($,base_url,root_url){
 		return {init:init}
 	})();
 	
+	
+	/*
+	*
+	*
+	*
+	*/
 	var p_room = (function(){
-		var info = {};
 		var init = function(){
 			core.ajax({
 				url: "Room/main",
-				data: {game_id: info.game_id},
+				data: {game_id: core.data.room.game_id},
 				ok: function(data){
 					function w_pos(pos,room_users){
 						var str = 'nouser'
@@ -95,7 +107,7 @@ window.core = (function($,base_url,root_url){
 						}
 						return str;
 					}
-					data['game_name'] = info.name;
+					data['game_name'] = core.data.room.name;
 					data['isleft'] = function(){
 						return w_pos(0,this.room_users)
 					}
@@ -112,20 +124,68 @@ window.core = (function($,base_url,root_url){
 				}
 			});				   
 		}
-		var bind = function(obj){
-			info = $.extend(info,obj);;
-		}
 		return {
 			init:init,
-			bind:bind
 			}
 	})();
 	
+	
+	/*
+	*
+	*
+	*
+	*/
+	var p_one = (function(){
+		var init = function(){
+			core.ajax({
+				url: "One/main",
+				data: {room_id: core.data.one.room_id},
+				ok: function(data){
+					function w_pos(pos,room_users){
+						var str = 'nouser'
+						for (var i=0;i<room_users.length;i++)
+						{
+							if(room_users[i].pos==pos){
+								str = '';
+								if(room_users[i].ready){
+									str += ' ready';	
+								}
+								break;
+							}
+						}
+						return str;
+					}
+					data['game_name'] = core.data.room.name;
+					data['table_img'] = core.data.room.table_img;
+					data['room_id'] = core.data.one.room_id;
+					data['isleft'] = function(){
+						return w_pos(0,this)
+					}
+					data['isright'] = function(){
+						return w_pos(1,this)
+					}
+					data['istop'] = function(){
+						return w_pos(2,this)
+					}
+					data['isbottom'] = function(){
+						return w_pos(3,this)
+					}
+					$(".main .roomdetail").html(Mustache.render($.tem.one, data));
+				}
+			});				   
+		}
+		return {
+			init:init,
+		}
+	})();
+	
 	var page = {
+		one:p_one,
 		game:p_game,
 		room:p_room,
 	};
 	return {
+			data: {},
 			load_page:load_page,
 			page: page,
 			ajax: ajax,
