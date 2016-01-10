@@ -354,3 +354,26 @@ html {
 .roomdetail .nouser{
 	background:none;
 }
+.roomdetail .myself{
+	background:url(../images/myself.png);
+	background-size:100%;
+}
+.roomdetail .myselfon{
+	background:url(../images/myselfon.png);
+	background-size:100%;
+}
+.roomdetail .myselfleft{
+	background:url(../images/myselfleft.png);
+	background-size:100%;
+}
+.roomdetail .myselflefton{
+	background:url(../images/myselflefton.png);
+	background-size:100%;
+}.roomdetail .myselfright{
+	background:url(../images/myselfright.png);
+	background-size:100%;
+}
+.roomdetail .myselfrighton{
+	background:url(../images/myselfrighton.png);
+	background-size:100%;
+}
