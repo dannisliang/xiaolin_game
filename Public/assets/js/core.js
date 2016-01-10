@@ -99,7 +99,8 @@ window.core = (function($,base_url,root_url){
 						{
 							if(room_users[i].pos==pos){
 								str = '';
-								if(room_users[i].ready){
+								if(room_users[i].ready==1){
+									console.log(typeof  room_users[i].ready);
 									str += ' ready';	
 								}
 								break;
