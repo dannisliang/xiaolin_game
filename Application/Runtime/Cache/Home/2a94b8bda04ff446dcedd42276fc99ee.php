@@ -3,35 +3,55 @@
 <head>
 <meta charset="utf-8">
 <title>小林游戏</title>
-<link href="/Public/assets/css/index.css" type="text/css" rel="stylesheet">
-<script type="text/javascript" src="/Public/assets/js/jquery.min.js"></script>
+<link href="/xl/Public/assets/css/index.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="/xl/Public/assets/js/jquery.min.js"></script>
 <script>
-window.base_url = "/index.php/";
+window.base_url = "/xl/index.php/";
 </script>
 </head>
 
 <body>
 <canvas width="100%" height="100%" class="snow"></canvas>
 <div class="main" id="fsvs-body">
-	<div class="slide">
+	<div style="display:none;" class="slide">
     	<div class="logo">
-        	<img src="/Public/assets/images/logo.png"/>
+        	<img src="/xl/Public/assets/images/logo.png"/>
         </div>
         <div  class="listgame"> 
         </div>
     </div>
     <div style="clear:both"></div>
-    <div class="gamedetail slide">       
-     </div>
+    <div style="display:none;" class="gamedetail slide">       
+    </div>
+    <div style="clear:both"></div>
+    <div class="roomdetail slide">     
+    	<div class="roomname">房间1</div>
+    	<div class="back">
+        	<a href="javascript:(1)">退出房间</a>
+        </div>
+        <div class="roomdet_con">
+        	<div class="con_table">
+            	<div class="table_inner"></div>
+            </div>
+            <div class="roomplayer playerleft">
+            </div>
+            <div class="roomplayer playerright">
+            </div>
+            <div class="roomplayer playertop">
+            </div>
+            <div class="roomplayer playerbottom">
+            </div>
+        </div>
+    </div>
 
     
 </div>
-<script src="/Public/assets/js/ToProgress.min.js"></script>
-<script type="text/javascript" src="/Public/assets/js/jquery.let_it_snow.js"></script>
-<script src="/Public/assets/js/fsvs.js"></script>
-<script src="/Public/assets/js/mustache.min.js"></script>
-<script src="/Public/assets/js/tem.js"></script>
-<script src="/Public/assets/js/core.js"></script>
+<script src="/xl/Public/assets/js/ToProgress.min.js"></script>
+<script type="text/javascript" src="/xl/Public/assets/js/jquery.let_it_snow.js"></script>
+<script src="/xl/Public/assets/js/fsvs.js"></script>
+<script src="/xl/Public/assets/js/mustache.min.js"></script>
+<script src="/xl/Public/assets/js/tem.js"></script>
+<script src="/xl/Public/assets/js/core.js"></script>
 <script type="text/javascript">
 $(document).ready( function() {
 	if( $.fn.fsvs ) {
