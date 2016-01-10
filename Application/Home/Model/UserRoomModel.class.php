@@ -18,8 +18,7 @@ class UserRoomModel extends CommModel {
 	}
 	
 	public function into_room($user_id, $room_id ,$pos=0){
-		$in = $this->user_room($user_id);
-		if($in)return false;
+		$this->out_room($user_id);
 		$map['pos'] = $pos;
 		$map['ready'] = 0;
 		$map['user_id'] = $user_id;

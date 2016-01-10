@@ -206,6 +206,14 @@ window.core = (function($,base_url,root_url){
 						return w_pos(3,this)
 					}
 					
+					data['ready'] = function(){
+						if(!isready){
+							return "准  备";	
+						}else{
+							return "取 消 准 备";	
+						}
+					}
+					
 					//
 					data['meleft'] = function(){
 						return isme(0,this)
@@ -283,7 +291,7 @@ window.core = (function($,base_url,root_url){
 	
 	var init = function(){
 		this.page.game.init();
-		loopid = setInterval(core.loop,500);
+		loopid = setInterval(core.loop,700);
 	}
 	return {
 		data: {},
