@@ -4,6 +4,9 @@ window.core = (function($,base_url,root_url){
 		game_img: "/Public/assets/images/game.png",	
 		
 	}
+	var loopid;
+	
+	var nowpage = 'game';
 	
 	var ajax = function(opt){
 		var progressBar = new ToProgress();
@@ -45,6 +48,13 @@ window.core = (function($,base_url,root_url){
 	var load_page = function(index){
 		var str = "core.page."+pagedata[index]+".init()";
 		eval(str);
+		nowpage = pagedata[index];
+	}
+	
+	var loop = function(){
+		var str = "core.page."+nowpage+".ref()";	
+		eval(str);
+		console.log(str);
 	}
 	
 	/*
@@ -79,7 +89,10 @@ window.core = (function($,base_url,root_url){
 				}
 			});				   
 		}
-		return {init:init}
+		return {
+			ref: function(){},
+			init:init
+		}
 	})();
 	
 	
@@ -127,6 +140,7 @@ window.core = (function($,base_url,root_url){
 			});				   
 		}
 		return {
+			ref:init,
 			init:init,
 			}
 	})();
@@ -140,10 +154,14 @@ window.core = (function($,base_url,root_url){
 	var p_one = (function(){
 		
 		var isready = false;
-		var init = function(){
+		var init_f = function(into){
+			var opt = {room_id: core.data.one.room_id};
+			if(into){
+				opt.pos = core.data.one.pos;
+			}
 			core.ajax({
 				url: "One/into_room",
-				data: {room_id: core.data.one.room_id,pos:core.data.one.pos},
+				data: opt,
 				ok: function(data){
 					function w_pos(pos,room_users){
 						var str = 'nouser'
@@ -206,6 +224,8 @@ window.core = (function($,base_url,root_url){
 				}
 			});				   
 		}
+		var init = function(){init_f(true)};
+		var ref = function(){init_f(false)};
 		
 		var ready = function(){
 			if(isready){
@@ -249,6 +269,7 @@ window.core = (function($,base_url,root_url){
 		
 		return {
 			init:init,
+			ref:ref,
 			ready:ready,
 			out_room:out_room,
 		}
@@ -259,11 +280,18 @@ window.core = (function($,base_url,root_url){
 		game:p_game,
 		room:p_room,
 	};
+	
+	var init = function(){
+		this.page.game.init();
+		loopid = setInterval(core.loop,500);
+	}
 	return {
-			data: {},
-			load_page:load_page,
-			page: page,
-			ajax: ajax,
+		data: {},
+		load_page:load_page,
+		page: page,
+		ajax: ajax,
+		loop: loop,
+		init: init,
 		};
 })($,window.base_url,root_url);
 
