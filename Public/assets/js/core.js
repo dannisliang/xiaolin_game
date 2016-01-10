@@ -8,12 +8,19 @@ window.core = (function($,base_url,root_url){
 		var progressBar = new ToProgress();
 		progressBar.increase(20);
 		var default_opt = {
+			type: 'POST',
 			dataType: 'json',
 			cache: false,
-			error: function(){
-				alert("网络异常");	
+			timeout: 1500,//毫秒
+			error: function(XMLHttpRequest, textStatus, errorThrown){
+				console.log("网络异常"+textStatus);	
+				if(textStatus=='timeout'){
+					console.log("请求超时，正在重试");
+					window.core.ajax(this);
+				}
 			},
 			err: function(jso){	
+				console.log("返回异常");
 				console.log(jso);
 			},
 			success: function(jso){
@@ -29,9 +36,9 @@ window.core = (function($,base_url,root_url){
 		
 		opt = $.extend(default_opt,opt);
 		opt.url = base_url+"/"+opt.url;
-		console.log(opt);
 		$.ajax(opt);
 	}
+	
 	
 	var load_page = function(index){
 		var str = "core.page."+pagedata[index]+".init()";
