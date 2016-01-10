@@ -28,7 +28,7 @@ window.core = (function($,base_url){
 		}
 		
 		opt = $.extend(default_opt,opt);
-		opt.url = base_url+opt.url;
+		opt.url = base_url+"?s=/"+opt.url;
 		console.log(opt);
 		$.ajax(opt);
 	}

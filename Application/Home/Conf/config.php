@@ -12,6 +12,8 @@ return array(
     'DB_PREFIX' => 'xl_',
     'DB_SUFFIX' => '',
 	
+	'URL_MODEL' => 3,
+	
 	'cookie_key' => 'oi89d9GD9(@GHa',
 	
 );

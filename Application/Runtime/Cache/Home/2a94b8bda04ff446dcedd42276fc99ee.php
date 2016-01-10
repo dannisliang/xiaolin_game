@@ -6,7 +6,7 @@
 <link href="/Public/assets/css/index.css" type="text/css" rel="stylesheet">
 <script type="text/javascript" src="/Public/assets/js/jquery.min.js"></script>
 <script>
-window.base_url = "/index.php/";
+window.base_url = "/index.php";
 </script>
 </head>
 
