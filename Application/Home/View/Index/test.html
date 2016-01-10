@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>小林游戏</title>
+<link href="__PUBLIC__/assets/css/index.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="__PUBLIC__/assets/js/jquery.min.js"></script>
+<script>
+window.base_url = "__MODULE__";
+window.root_url = "__ROOT__";
+</script>
+</head>
+
+<body>
+	<h1 id="me"></h1>
+	<h1 id="he"></h1>
+<script src="__PUBLIC__/assets/js/ToProgress.min.js"></script>
+<script src="__PUBLIC__/assets/js/fsvs.js"></script>
+<script src="__PUBLIC__/assets/js/core.js"></script>
+<script type="text/javascript">
+$(document).ready( function() {
+	function move(i){
+		core.ajax({
+			url: "Room/ttt",
+			data: {move:i},
+			ok: function(data){
+				console.log(data);
+				if(data<40){
+					$("#me").html(data);
+					data++;
+					setTimeout(function(){move(data);
+					},100);
+				}
+			},
+		})
+	}
+	
+	move(1);
+});
+</script>
+</body>
+</html>

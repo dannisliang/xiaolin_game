@@ -1,9 +1,9 @@
-(function(){
+(function(root_url){
 var tem = {};
 tem.game = '{{#.}}<div class="game {{statusf}}" va="{{id}}" onclick="{{statusff}};core.page.room.bind( {  game_id:\'{{id}}\',name:\'{{name}}\'  });fsvs.slideDown();">'+
                ' <div class="gamename">'+
 '                    <div class="title">'+
- '                   <img src="{{imgf}}">'+
+ '                   <img src="'+root_url+'{{imgf}}">'+
   '                  <a>{{name}}</a>'+
    '                 </div>'+
     '            </div>'+
@@ -39,4 +39,4 @@ tem.room = '<div class="gameroomname">{{game_name}}游戏大厅</div>'+
       '      </div>{{/.}}';
 
 $.tem = tem;
-})();
+})(root_url);
