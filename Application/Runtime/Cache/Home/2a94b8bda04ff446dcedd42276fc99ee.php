@@ -1,13 +1,12 @@
-<!doctype html>
+<?php if (!defined('THINK_PATH')) exit();?><!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>小林游戏</title>
-<link href="__PUBLIC__/assets/css/index.css" type="text/css" rel="stylesheet">
-<script type="text/javascript" src="__PUBLIC__/assets/js/jquery.min.js"></script>
+<link href="/xl/Public/assets/css/index.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="/xl/Public/assets/js/jquery.min.js"></script>
 <script>
-window.base_url = "__MODULE__";
-window.root_url = "__ROOT__ ";
+window.base_url = "/xl/index.php/";
 </script>
 </head>
 
@@ -16,7 +15,7 @@ window.root_url = "__ROOT__ ";
 <div class="main" id="fsvs-body">
 	<div style="display:none;" class="slide">
     	<div class="logo">
-        	<img src="__PUBLIC__/assets/images/logo.png"/>
+        	<img src="/xl/Public/assets/images/logo.png"/>
         </div>
         <div  class="listgame"> 
         </div>
@@ -47,12 +46,12 @@ window.root_url = "__ROOT__ ";
 
     
 </div>
-<script src="__PUBLIC__/assets/js/ToProgress.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/assets/js/jquery.let_it_snow.js"></script>
-<script src="__PUBLIC__/assets/js/fsvs.js"></script>
-<script src="__PUBLIC__/assets/js/mustache.min.js"></script>
-<script src="__PUBLIC__/assets/js/tem.js"></script>
-<script src="__PUBLIC__/assets/js/core.js"></script>
+<script src="/xl/Public/assets/js/ToProgress.min.js"></script>
+<script type="text/javascript" src="/xl/Public/assets/js/jquery.let_it_snow.js"></script>
+<script src="/xl/Public/assets/js/fsvs.js"></script>
+<script src="/xl/Public/assets/js/mustache.min.js"></script>
+<script src="/xl/Public/assets/js/tem.js"></script>
+<script src="/xl/Public/assets/js/core.js"></script>
 <script type="text/javascript">
 $(document).ready( function() {
 	if( $.fn.fsvs ) {

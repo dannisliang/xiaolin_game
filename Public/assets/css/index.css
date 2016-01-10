@@ -150,12 +150,12 @@ html {
 	width:100%;
 	padding-top:40px;
 	}
-.gamedetail .back{
+.main .back{
 	width:100px;
 	height:40px;
 	margin-left:10px;
 	}
-.gamedetail .back a{
+.main .back a{
 	width:100px;
 	height:20px;
 	display:block;
@@ -166,7 +166,7 @@ html {
 	color:#fff;
 	padding:10px 5px;
 	}
-.gamedetail .back a:hover{
+.main .back a:hover{
 	background:#fff;
 	opacity:0.85;
 	color:#222;
@@ -246,3 +246,69 @@ html {
 .gamedetail .roomlist .gameroom .nouser{
 	background:none;
 }
+.main .roomdetail{
+	width:100%;
+	padding-top:40px;
+	}
+.roomdetail .roomname{
+	text-align:center;
+	font-size:24px;
+	color:#fff;
+	padding-bottom:30px;
+	letter-spacing:5px;
+	}
+.roomdetail .roomdet_con{
+	width:100%;
+	margin:10px 2%;
+	-background:#fff;
+	position:relative;
+	}
+.roomdetail .con_table{
+	width:60%;
+	padding:10px;
+	background:#fff;
+	height:240px;
+	-opacity:0.8;
+	position:absolute;
+	left:20%;
+	top:100px;
+	border:1px solid #fff;
+	border-radius:40px;
+	}
+.roomdetail .table_inner{
+	width:94%;
+	background:#222;
+	height:230px;
+	position:absolute;
+	top:15px;
+	left:3%;
+	border:1px solid #fff;
+	border-radius:5px;
+	}
+.roomdetail .roomplayer{
+	width:100px;
+	height:100px;
+	position:absolute;
+	}
+.roomdetail .playerleft {
+	left:100px;
+	top:150px;
+	background:url(../images/playerleft.png) no-repeat;
+	background-size:100%;
+	}
+.roomdetail .playerright {
+	right:90px;
+	top:150px;
+	background:url(../images/playerright.png) no-repeat;
+	background-size:100%;
+	}
+.roomdetail .playertop {
+	top:10px;
+	left:46%;
+	background:url(../images/player.png) no-repeat;
+	}
+.roomdetail .playerbottom {
+	top:270px;
+	left:46%;
+	background:url(../images/player.png) no-repeat;
+	}
