@@ -154,6 +154,7 @@ html {
 	width:100px;
 	height:40px;
 	margin-left:10px;
+	float:left;
 	}
 .main .back a{
 	width:100px;
@@ -250,12 +251,37 @@ html {
 	width:100%;
 	padding-top:40px;
 	}
+.roomdetail .gamebtn{
+	height:40px;
+	float:right;}
+.gameready{
+	width:100px;
+	height:40px;
+	border:1px solid #fff;
+	border-radius:8px;
+	font-size:18px;
+	font-family:"微软雅黑";
+	text-align:center;
+	background:#fff;
+	opacity:0.9;}
+.gameready:hover{
+	-moz-transform:scale(1.05,1.05);
+	-webkit-transform:scale(1.05,1.05);
+	-o-transform:scale(1.03,1.05);
+	opacity:1;
+	box-shadow:0px 0px 8px #ccc;
+	}
 .roomdetail .roomname{
 	text-align:center;
 	font-size:24px;
 	color:#fff;
 	padding-bottom:30px;
 	letter-spacing:5px;
+	}
+.roomdetail .roomname span{
+	text-shadow: #ccc 1px 0 0,#ccc 0 1px 0,#ccc -1px 0 0,#ccc 0 -1px 0;
+	-webkit-text-shadow:#ccc 1px 0 0,#ccc 0 1px 0,#ccc -1px 0 0,#ccc 0 -1px 0;
+	-moz-text-shadow:#ccc 1px 0 0,#ccc 0 1px 0,#ccc -1px 0 0,#ccc 0 -1px 0;
 	}
 .roomdetail .roomdet_con{
 	width:100%;
@@ -271,7 +297,7 @@ html {
 	-opacity:0.8;
 	position:absolute;
 	left:20%;
-	top:100px;
+	top:120px;
 	border:1px solid #fff;
 	border-radius:40px;
 	}
@@ -291,24 +317,24 @@ html {
 	position:absolute;
 	}
 .roomdetail .playerleft {
-	left:100px;
-	top:150px;
+	left:110px;
+	top:170px;
 	background:url(../images/playerleft.png) no-repeat;
 	background-size:100%;
 	}
 .roomdetail .playerright {
-	right:90px;
-	top:150px;
+	right:100px;
+	top:170px;
 	background:url(../images/playerright.png) no-repeat;
 	background-size:100%;
 	}
 .roomdetail .playertop {
-	top:10px;
+	top:0px;
 	left:46%;
 	background:url(../images/player.png) no-repeat;
 	}
 .roomdetail .playerbottom {
-	top:270px;
+	top:310px;
 	left:46%;
 	background:url(../images/player.png) no-repeat;
 	}

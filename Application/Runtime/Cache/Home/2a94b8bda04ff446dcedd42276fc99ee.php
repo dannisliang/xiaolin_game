@@ -6,7 +6,7 @@
 <link href="/xl/Public/assets/css/index.css" type="text/css" rel="stylesheet">
 <script type="text/javascript" src="/xl/Public/assets/js/jquery.min.js"></script>
 <script>
-window.base_url = "/xl/index.php/";
+window.base_url = "/xl/index.php?s=";
 </script>
 </head>
 
@@ -25,13 +25,18 @@ window.base_url = "/xl/index.php/";
     </div>
     <div style="clear:both"></div>
     <div class="roomdetail slide">     
-    	<div class="roomname">房间1</div>
+    	<div class="roomname"><span>抢豆豆</span>---房间1</div>
     	<div class="back">
         	<a href="javascript:(1)">退出房间</a>
         </div>
+        <div class="gamebtn">
+        	<button class="gameready">准&nbsp;&nbsp;备</button>
+        </div>
         <div class="roomdet_con">
         	<div class="con_table">
-            	<div class="table_inner"></div>
+            	<div class="table_inner">
+                	<img src="/xl/Public/assets/images/eatdoubg.png"/>
+                </div>
             </div>
             <div class="roomplayer playerleft">
             </div>
