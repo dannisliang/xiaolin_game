@@ -23,6 +23,7 @@ tem.room = '<div class="gameroomname">{{game_name}}游戏大厅</div>'+
 '    	<div class="back">'+
  '       	<a href="javascript:fsvs.slideUp()">返回主页</a>'+
   '      </div>'+
+  '	 	<div style="clear:both"></div>'+
    '     <div class="roomlist">'+
     '    	{{#.}}<div class="gameroom">'+
      '       	<div class="roomtable">'+
