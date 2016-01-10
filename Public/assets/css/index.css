@@ -245,6 +245,9 @@ html {
 	top:100px;
 	}
 .gamedetail .roomlist .gameroom .nouser{
+	cursor:pointer;
+}
+.main .nouser{
 	background:none;
 }
 .main .roomdetail{
