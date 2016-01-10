@@ -30,7 +30,7 @@ public $user_id = 0;
 		}else{
 			$user_id = session("user_id");
 		}
-		$this->user_id = $user_id;
+		define('UID',$user_id);
  	}
     
 	protected function ok($data = '',$code = 200){

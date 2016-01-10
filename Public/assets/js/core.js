@@ -13,6 +13,7 @@ window.core = (function($,base_url,root_url){
 			dataType: 'json',
 			cache: false,
 			timeout: 1500,//毫秒
+			ok: function(){},
 			error: function(XMLHttpRequest, textStatus, errorThrown){
 				console.log("网络异常"+textStatus);	
 				if(textStatus=='timeout'){
@@ -99,7 +100,7 @@ window.core = (function($,base_url,root_url){
 						{
 							if(room_users[i].pos==pos){
 								str = '';
-								if(room_users[i].ready){
+								if(room_users[i].ready==1){
 									str += ' ready';	
 								}
 								break;
@@ -107,6 +108,7 @@ window.core = (function($,base_url,root_url){
 						}
 						return str;
 					}
+					
 					data['game_name'] = core.data.room.name;
 					data['isleft'] = function(){
 						return w_pos(0,this.room_users)
@@ -138,8 +140,8 @@ window.core = (function($,base_url,root_url){
 	var p_one = (function(){
 		var init = function(){
 			core.ajax({
-				url: "One/main",
-				data: {room_id: core.data.one.room_id},
+				url: "One/into_room",
+				data: {room_id: core.data.one.room_id,pos:core.data.one.pos},
 				ok: function(data){
 					function w_pos(pos,room_users){
 						var str = 'nouser'
@@ -147,7 +149,7 @@ window.core = (function($,base_url,root_url){
 						{
 							if(room_users[i].pos==pos){
 								str = '';
-								if(room_users[i].ready){
+								if(room_users[i].ready==1){
 									str += ' ready';	
 								}
 								break;
@@ -155,6 +157,19 @@ window.core = (function($,base_url,root_url){
 						}
 						return str;
 					}
+					function isme(pos,room_users){
+						
+						var str = ''
+						for (var i=0;i<room_users.length;i++)
+						{
+							if(room_users[i].pos==pos&&room_users[i].me){
+								str = 'm';
+								break;
+							}
+						}
+						return str;
+					}
+					
 					data['game_name'] = core.data.room.name;
 					data['table_img'] = core.data.room.table_img;
 					data['room_id'] = core.data.one.room_id;
@@ -170,12 +185,36 @@ window.core = (function($,base_url,root_url){
 					data['isbottom'] = function(){
 						return w_pos(3,this)
 					}
+					
+					//
+					data['meleft'] = function(){
+						return isme(0,this)
+					}
+					data['meright'] = function(){
+						return isme(1,this)
+					}
+					data['metop'] = function(){
+						return isme(2,this)
+					}
+					data['mebottom'] = function(){
+						return isme(3,this)
+					}
+					
 					$(".main .roomdetail").html(Mustache.render($.tem.one, data));
 				}
 			});				   
 		}
+		
+		var out_room = function (){
+			core.ajax({
+				url: "One/out_room",
+			});
+			
+		}
+		
 		return {
 			init:init,
+			out_room:out_room,
 		}
 	})();
 	

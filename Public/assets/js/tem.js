@@ -29,19 +29,19 @@ tem.room = '<div class="gameroomname">{{game_name}}游戏大厅</div>'+
      '       	<div class="roomtable">'+
       '          	<div class="innertable"><a>房间{{id}}</a></div>'+
        '         </div>'+
-        '        <div class="playleft play {{isleft}}" onclick="if(\'{{isleft}}\'!=\'nouser\')return false;core.data.one= {  game_id:\'{{id}}\',name:\'{{game_name}}\',room_id:\'{{id}}\'  };fsvs.slideDown();">'+
+        '        <div class="playleft play {{isleft}}" onclick="if(\'{{isleft}}\'!=\'nouser\')return false;core.data.one= {  game_id:\'{{id}}\',name:\'{{game_name}}\',room_id:\'{{id}}\',pos:0  };fsvs.slideDown();">'+
          '       </div>'+
-          '      <div class="playright play {{isright}}" onclick="if(\'{{isright}}\'!=\'nouser\')return false;core.data.one= {  game_id:\'{{id}}\',name:\'{{game_name}}\',room_id:\'{{id}}\'  };fsvs.slideDown();">'+
+          '      <div class="playright play {{isright}}" onclick="if(\'{{isright}}\'!=\'nouser\')return false;core.data.one= {  game_id:\'{{id}}\',name:\'{{game_name}}\',room_id:\'{{id}}\',pos:1   };fsvs.slideDown();">'+
 		  '     </div>'+
-            '    <div class="playtop play {{istop}}"  onclick="if(\'{{istop}}\'!=\'nouser\')return false;core.data.one= {  game_id:\'{{id}}\',name:\'{{game_name}}\',room_id:\'{{id}}\'  };fsvs.slideDown();">'+
+            '    <div class="playtop play {{istop}}"  onclick="if(\'{{istop}}\'!=\'nouser\')return false;core.data.one= {  game_id:\'{{id}}\',name:\'{{game_name}}\',room_id:\'{{id}}\',pos:2   };fsvs.slideDown();">'+
              '   </div>'+
-    '            <div class="playbottom play {{isbottom}}"  onclick="if(\'{{isbottom}}\'!=\'nouser\')return false;core.data.one= {  game_id:\'{{id}}\',name:\'{{game_name}}\',room_id:\'{{id}}\'  };fsvs.slideDown();">'+
+    '            <div class="playbottom play {{isbottom}}"  onclick="if(\'{{isbottom}}\'!=\'nouser\')return false;core.data.one= {  game_id:\'{{id}}\',name:\'{{game_name}}\',room_id:\'{{id}}\',pos:3   };fsvs.slideDown();">'+
      '           </div>'+
       '      </div>{{/.}}';
 	  
 tem.one = '<div class="roomname"><span>{{game_name}}</span>---房间{{room_id}}</div>'+
 '				<div class="back">'+
-'					<a href="javascript:fsvs.slideUp()">退出房间</a>'+
+'					<a href="javascript:core.page.one.out_room();fsvs.slideUp()">退出房间</a>'+
 '				</div>'+
 '				<div class="gamebtn">'+
 '					<button class="gameready">准&nbsp;&nbsp;备</button>'+
@@ -53,13 +53,13 @@ tem.one = '<div class="roomname"><span>{{game_name}}</span>---房间{{room_id}}<
 '							<img src="'+root_url+'{{table_img}}"/>'+
 '						</div>'+
 '					</div>'+
-'					<div class="roomplayer playerleft {{isleft}}left">'+
+'					<div class="roomplayer playerleft {{isleft}} {{isleft}}left {{meleft}}yselfleft">'+
 '					</div>'+
-'					<div class="roomplayer playerright {{isright}}right">'+
+'					<div class="roomplayer playerright {{isright}} {{isright}}right {{meright}}yselfright">'+
 '					</div>'+
-'					<div class="roomplayer playertop {{istop}}">'+
+'					<div class="roomplayer playertop {{istop}} {{metop}}yself">'+
 '					</div>'+
-'					<div class="roomplayer playerbottom {{isbottom}}">'+
+'					<div class="roomplayer playerbottom {{isbottom}} {{mebottom}}yself">'+
 '					</div>'+
 '				</div>';
 
