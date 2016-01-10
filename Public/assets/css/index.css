@@ -227,7 +227,7 @@ html {
 	left:100px;
 	}
 
-.main .ready{
+.gamedetail .roomlist .gameroom .ready{
 	background:url(../images/playeron.png);
 	background-size:100%;
 }
@@ -246,8 +246,6 @@ html {
 	}
 .gamedetail .roomlist .gameroom .nouser{
 	cursor:pointer;
-}
-.main .nouser{
 	background:none;
 }
 .main .roomdetail{
@@ -319,6 +317,10 @@ html {
 	height:100px;
 	position:absolute;
 	}
+.roomdetail .ready{
+	background:url(../images/playeron.png);
+	background-size:100%;
+}
 .roomdetail .playerleft {
 	left:110px;
 	top:170px;
@@ -348,4 +350,7 @@ html {
 .main .roomdetail .readyright{
 	background:url(../images/playerrighton.png);
 	background-size:100%;
+}
+.roomdetail .nouser{
+	background:none;
 }
