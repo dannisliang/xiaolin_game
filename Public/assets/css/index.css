@@ -366,7 +366,7 @@ html {
 	background:url(../images/myselfleft.png);
 	background-size:100%;
 }
-.roomdetail .myselfleft.ready{
+.roomdetail .myselfleft.readyleft{
 	background:url(../images/myselflefton.png);
 	background-size:100%;
 }
@@ -374,7 +374,7 @@ html {
 	background:url(../images/myselfright.png);
 	background-size:100%;
 }
-.roomdetail .myselfright.ready{
+.roomdetail .myselfright.readyright{
 	background:url(../images/myselfrighton.png);
 	background-size:100%;
 }
