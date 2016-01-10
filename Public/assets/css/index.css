@@ -358,7 +358,7 @@ html {
 	background:url(../images/myself.png);
 	background-size:100%;
 }
-.roomdetail .myselfon{
+.roomdetail .myself.ready{
 	background:url(../images/myselfon.png);
 	background-size:100%;
 }
@@ -366,14 +366,15 @@ html {
 	background:url(../images/myselfleft.png);
 	background-size:100%;
 }
-.roomdetail .myselflefton{
+.roomdetail .myselfleft.ready{
 	background:url(../images/myselflefton.png);
 	background-size:100%;
-}.roomdetail .myselfright{
+}
+.roomdetail .myselfright{
 	background:url(../images/myselfright.png);
 	background-size:100%;
 }
-.roomdetail .myselfrighton{
+.roomdetail .myselfright.ready{
 	background:url(../images/myselfrighton.png);
 	background-size:100%;
 }
