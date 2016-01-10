@@ -1,0 +1,1 @@
+<?php if (!defined('THINK_PATH')) exit();?> s5d54g56

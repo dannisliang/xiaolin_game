@@ -1,0 +1,248 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin:0;
+	padding:0;
+	}
+html,body{
+     -webkit-font-smoothing: antialiased;
+     background:#222;
+	 font-family:"微软雅黑";
+	 height:100%;
+	 width:100%;
+	}
+html {
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	}
+#fsvs-body{
+	height:100%;
+}
+.slide{
+	width:100%;
+	height:100%;
+}
+.snow {
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index:0;
+}
+.main{
+	width:90%;
+	margin:0 auto;
+	height:100%;
+	width:1100px;
+	}
+.main .logo{
+	width:100%;
+	text-align:center;
+	padding-top:20px;
+	}
+.main .listgame{
+	width:100%;
+	padding-top:20px;
+	float:left;
+	}
+.main .listgame .game{
+	width:29%;
+	height:160px;
+	background:#fff;
+	opacity:0.9;
+	float:left;
+	margin:20px 2%;
+	border-radius:10px;
+	position:relative;
+	}
+.main .listgame .gameoff{
+	background:#ccc;
+	}
+
+.main .listgame .game:hover{
+	-moz-transform:scale(1.05,1.05);
+	-webkit-transform:scale(1.05,1.05);
+	-o-transform:scale(1.05,1.05);
+	cursor:pointer;
+	opacity:1;
+	}
+.main .listgame .gameoff:hover{
+	-moz-transform:scale(1,1);
+	-webkit-transform:scale(1,1);
+	-o-transform:scale(1,1);
+	cursor: default;
+	opacity:0.98;
+	}
+.game a{
+	text-decoration:none;
+	color:#222;
+	}
+.game .gamename{
+	width:100%;
+	height:80px;
+	text-align:center;
+	font-size:26px;
+	color:#990;
+	font-weight:bold;
+	padding-top:10px;
+	}
+.game .gamename .title{
+	width:200px;
+	height:70px;
+	margin:0 auto;
+	}
+.game .gamename a{
+	display:block;
+	float:left;
+	padding-top:20px;
+	width:140px;
+	text-align:center;
+	}
+.game .gamename img{
+	float:left;
+	width:60px;
+	height:60px;
+	}
+.game .gameifo{
+	width:100%;
+	text-align:center;
+	}
+.game .gameifo a{
+	padding:0 10px;
+	}
+
+.game .gameifo a span{
+	padding:0 5px;
+	font-weight:bold;
+	}
+.game .gamefoot{
+	width:100%;
+	height:31px;
+	position:absolute;
+	bottom:0;
+	}
+.game .gamefoot .redu{
+	width:25px;
+	height:15px;
+	font-size:12px;
+	position:absolute;
+	left:80%;
+	border-radius:4px;
+	bottom:10px;
+	color:#A3A0A0;
+	}
+.game .gamefoot .gamelike{
+	width:80%;
+	height:10px;
+	background:#D3CDCD;
+	position:absolute;
+	bottom:0;
+	border-radius:2px;
+	}
+
+.main .gamedetail{
+	width:100%;
+	padding-top:40px;
+	}
+.gamedetail .back{
+	width:100px;
+	height:40px;
+	margin-left:10px;
+	}
+.gamedetail .back a{
+	width:100px;
+	height:20px;
+	display:block;
+	text-align:center;
+	border-radius:4px;
+	border:1px solid #999;
+	text-decoration:none;
+	color:#fff;
+	padding:10px 5px;
+	}
+.gamedetail .back a:hover{
+	background:#fff;
+	opacity:0.85;
+	color:#222;
+	}
+.gamedetail .roomlist{
+	width:100%;
+	margin-top:10px;
+	padding:0px 10px;}
+.gamedetail .gameroomname{
+	text-align:center;
+	font-size:24px;
+	color:#fff;
+	padding-bottom:30px;
+	letter-spacing:5px;
+	}
+.gamedetail .roomlist .gameroom{
+	width:220px;
+	height:220px;
+	padding:10px;
+	position:relative;
+	float:left;
+	margin:15px;
+	}
+.gamedetail .roomlist .gameroom .roomtable{
+	width:100px;
+	height:100px;
+	padding:10px;
+	border:2px solid #fff;
+	position:absolute;
+	left:60px;
+	top:60px;}
+.gamedetail .roomlist .gameroom .roomtable .innertable{
+	width:114px;
+	height:114px;
+	border:1px solid #fff;
+	position:absolute;
+	left:2px;
+	top:2px;
+	color:#fff;
+	text-align:center;
+	}
+.gamedetail .roomlist .gameroom .roomtable .innertable a{
+	line-height:114px;
+	font-size:16px;
+	letter-spacing:2px;
+	}
+.gamedetail .roomlist .gameroom .play{
+	width:40px;
+	height:40px;
+	border:1px solid #fff;
+	position:absolute;
+	background:url(../images/player.png);
+	background-size:100%;
+	}
+.gamedetail .roomlist .gameroom .playtop{
+	top:10px;
+	left:100px;
+	}
+
+.gamedetail .roomlist .gameroom .ready{
+	background:url(../images/playeron.png);
+	background-size:100%;
+}
+.gamedetail .roomlist .gameroom .playbottom{
+	bottom:10px;
+	left:100px;
+	}
+
+.gamedetail .roomlist .gameroom .playleft{
+	left:10px;
+	top:100px;
+	}
+.gamedetail .roomlist .gameroom .playright{
+	right:10px;
+	top:100px;
+	}
+.gamedetail .roomlist .gameroom .nouser{
+	background:none;
+}
