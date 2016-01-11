@@ -1,0 +1,34 @@
+2016-01-11 16:03:17 Workerman[start.php] start in DEBUG mode
+2016-01-11 16:03:24 Workerman[start.php] Stopping ...
+2016-01-11 16:03:24 Workerman[start.php] has been stopped
+2016-01-11 16:04:08 Workerman[start.php] start in DEBUG mode
+2016-01-11 16:42:12 Workerman[start.php] Stopping ...
+2016-01-11 16:42:12 Workerman[start.php] has been stopped
+2016-01-11 16:42:18 Workerman[start.php] start in DEBUG mode
+2016-01-11 16:45:57 Workerman[start.php] Stopping ...
+2016-01-11 16:45:57 Workerman[start.php] has been stopped
+2016-01-11 16:45:59 Workerman[start.php] start in DEBUG mode
+2016-01-11 16:57:23 client_id:7f00000108fe00000017	client_ip:-1263599413
+exception 'Exception' with message 'client_id undefined is invalid' in /home/wwwroot/default/xiaolin/workerman-chat/GatewayWorker/Lib/Context.php:102
+Stack trace:
+#0 /home/wwwroot/default/xiaolin/workerman-chat/GatewayWorker/Lib/Gateway.php(452): GatewayWorker\Lib\Context::clientIdToAddress('undefined')
+#1 /home/wwwroot/default/xiaolin/workerman-chat/GatewayWorker/Lib/Gateway.php(78): GatewayWorker\Lib\Gateway::sendCmdAndMessageToClient('undefined', 5, '{"type":"say","...')
+#2 /home/wwwroot/default/xiaolin/workerman-chat/Applications/Chat/Event.php(101): GatewayWorker\Lib\Gateway::sendToClient('undefined', '{"type":"say","...')
+#3 /home/wwwroot/default/xiaolin/workerman-chat/GatewayWorker/BusinessWorker.php(241): Event::onMessage('7f00000108fe000...', '{"type":"say","...')
+#4 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#5 /home/wwwroot/default/xiaolin/workerman-chat/Workerman/Connection/TcpConnection.php(451): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#6 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #36)
+#7 /home/wwwroot/default/xiaolin/workerman-chat/Workerman/Events/Select.php(263): call_user_func_array(Array, Array)
+#8 /home/wwwroot/default/xiaolin/workerman-chat/Workerman/Worker.php(1399): Workerman\Events\Select->loop()
+#9 /home/wwwroot/default/xiaolin/workerman-chat/GatewayWorker/BusinessWorker.php(104): Workerman\Worker->run()
+#10 /home/wwwroot/default/xiaolin/workerman-chat/Workerman/Worker.php(839): GatewayWorker\BusinessWorker->run()
+#11 /home/wwwroot/default/xiaolin/workerman-chat/Workerman/Worker.php(799): Workerman\Worker::forkOneWorker(Object(GatewayWorker\BusinessWorker))
+#12 /home/wwwroot/default/xiaolin/workerman-chat/Workerman/Worker.php(354): Workerman\Worker::forkWorkers()
+#13 /home/wwwroot/default/xiaolin/workerman-chat/start.php(37): Workerman\Worker::runAll()
+#14 {main}
+2016-01-11 19:40:16 Workerman[start.php] Stopping ...
+2016-01-11 19:40:16 Workerman[start.php] has been stopped
+2016-01-11 19:40:22 Workerman[start.php] start in DEBUG mode
+2016-01-11 20:46:27 Workerman[start.php] Stopping ...
+2016-01-11 20:46:27 Workerman[start.php] has been stopped
+2016-01-11 20:48:33 Workerman[start.php] start in DEBUG mode
