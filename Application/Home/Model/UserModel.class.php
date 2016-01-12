@@ -8,5 +8,9 @@ class UserModel extends CommModel {
 		$map['gtime'] = getnow();
 		return $this->add($map);
 	}
+        
+        public function getuser($id){
+           return $this->find($id);
+        }
 
 }

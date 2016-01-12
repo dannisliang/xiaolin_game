@@ -8,29 +8,31 @@ class CommController extends Controller
 public $user_id = 0;
 	public function _initialize(){
     	if(!session("user_id")){
-			if(!cookie("user_id")){
-				$user_id = D("User")->user_add();
-				cookie("user_id", $user_id, 36000000);
-				cookie("token", md5(C("cookie_key").$user_id), 36000000);
-				session("user_id", $user_id);
-			}else{
-				$user_id = cookie("user_id");
-				$token = cookie("token");
-				if(md5(C("cookie_key").$user_id)==$token){
-					session("user_id", $user_id);
-					cookie("user_id", $user_id, 36000000);
-					cookie("token", md5(C("cookie_key").$user_id), 36000000);
-				}else{
-					$user_id = D("User")->user_add();
-					cookie("user_id", $user_id, 36000000);
-					cookie("token", md5(C("cookie_key").$user_id), 36000000);
-					session("user_id", $user_id);
-				}
-			}
-		}else{
-			$user_id = session("user_id");
-		}
-		define('UID',$user_id);
+                    if(!cookie("user_id")){
+                            $user_id = D("User")->user_add();
+                            cookie("user_id", $user_id, 36000000);
+                            cookie("token", md5(C("cookie_key").$user_id), 36000000);
+                            session("user_id", $user_id);
+                    }else{
+                            $user_id = cookie("user_id");
+                            $token = cookie("token");
+                            if(md5(C("cookie_key").$user_id)==$token){
+                                    session("user_id", $user_id);
+                                    cookie("user_id", $user_id, 36000000);
+                                    cookie("token", md5(C("cookie_key").$user_id), 36000000);
+                            }else{
+                                    $user_id = D("User")->user_add();
+                                    cookie("user_id", $user_id, 36000000);
+                                    cookie("token", md5(C("cookie_key").$user_id), 36000000);
+                                    session("user_id", $user_id);
+                            }
+                    }
+            }else{
+                    $user_id = session("user_id");
+            }
+            $user = D("user")->getuser($user_id);
+            define('UID',$user_id);
+            define('NAME',$user['name']);
  	}
     
 	protected function ok($data = '',$code = 200){

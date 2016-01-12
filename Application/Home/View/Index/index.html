@@ -8,6 +8,8 @@
 <script>
 window.base_url = "__MODULE__";
 window.root_url = "__ROOT__";
+WEB_SOCKET_SWF_LOCATION = "/swf/WebSocketMain.swf";
+WEB_SOCKET_DEBUG = true;
 if(window.location.hash){
 		window.location.href = '__MODULE__';
 }
@@ -58,8 +60,15 @@ $(document).ready( function() {
 	}
 	window.fsvs = slider;
 	slider.init();
-	$("canvas.snow").let_it_snow();	
-	core.init();
+	$("canvas.snow").let_it_snow();
+        
+        var opt = {
+            id: "{$id",
+            name: "{$name}",
+            hash: "{$hash}",
+            time: "{$time}"
+        };
+	core.init(opt);
 });
 </script>
 </body>

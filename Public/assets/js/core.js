@@ -1,13 +1,15 @@
 window.core = (function($,base_url,root_url){
 	var pagedata = ['game','room','one'];
+        var user;
 	var def = {
 		game_img: "/Public/assets/images/game.png",	
 		
 	}
-	var loopid;
+	//var loopid;
 	
 	var nowpage = 'game';
 	
+        /*
 	var ajax = function(opt){
 		var progressBar = new ToProgress();
 		progressBar.increase(20);
@@ -43,7 +45,9 @@ window.core = (function($,base_url,root_url){
 		opt.url = base_url+"/"+opt.url;
 		$.ajax(opt);
 	}
-	
+	*/
+       
+       
 	
 	var load_page = function(index){
 		var str = "core.page."+pagedata[index]+".init()";
@@ -51,17 +55,13 @@ window.core = (function($,base_url,root_url){
 		nowpage = pagedata[index];
 	}
 	
-	var loop = function(){
-		var str = "core.page."+nowpage+".ref()";	
-		eval(str);
-		//console.log(str);
-	}
 	
 	/*
-	*
-	*
-	*
-	*/
+         * 
+         * @type Function|core_L66.coreAnonym$1
+         * 
+         * 
+         */
 	
 	var p_game = (function(){
 		var init = function(){
@@ -299,9 +299,10 @@ window.core = (function($,base_url,root_url){
 		room:p_room,
 	};
 	
-	var init = function(){
+	var init = function(opt){
+                user = opt;
 		this.page.game.init();
-		loopid = setInterval(core.loop,900);
+		//loopid = setInterval(core.loop,900);
 	}
 	return {
 		data: {},
@@ -311,6 +312,6 @@ window.core = (function($,base_url,root_url){
 		loop: loop,
 		init: init,
 		};
-})($,window.base_url,root_url);
+})($,window.base_url,window.root_url);
 
 
