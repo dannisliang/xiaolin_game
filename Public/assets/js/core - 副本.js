@@ -4,12 +4,12 @@ window.core = (function($,base_url,root_url){
 	var def = {
 		game_img: "/Public/assets/images/game.png",	
 		
-	}
-	//var loopid;
+	};
+	var loopid;
 	
 	var nowpage = 'game';
 	
-        /*
+        
 	var ajax = function(opt){
 		var progressBar = new ToProgress();
 		progressBar.increase(20);
@@ -45,7 +45,6 @@ window.core = (function($,base_url,root_url){
 		opt.url = base_url+"/"+opt.url;
 		$.ajax(opt);
 	}
-	*/
        
        
 	
@@ -54,7 +53,12 @@ window.core = (function($,base_url,root_url){
 		eval(str);
 		nowpage = pagedata[index];
 	}
-	
+        
+	var loop = function(){
+		var str = "core.page."+nowpage+".ref()";	
+		eval(str);
+		//console.log(str);
+	}
 	
 	/*
          * 
@@ -302,7 +306,7 @@ window.core = (function($,base_url,root_url){
 	var init = function(opt){
                 user = opt;
 		this.page.game.init();
-		//loopid = setInterval(core.loop,900);
+		loopid = setInterval(core.loop,900);
 	}
 	return {
 		data: {},
