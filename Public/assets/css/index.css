@@ -1,380 +1,217 @@
 @charset "utf-8";
 /* CSS Document */
 *{
-	margin:0;
 	padding:0;
+	margin:0;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
 	}
-html,body{
-     -webkit-font-smoothing: antialiased;
-     background:#222;
-	 font-family:"微软雅黑";
-	 height:100%;
-	 width:100%;
+body{
+	background:#a3d0a7;
+	font:normal 14px/1.5 Tahoma,"Lucida Grande",Verdana,"Microsoft Yahei",STXihei,hei;
 	}
-html {
-	height: 100%;
-	width: 100%;
-	position: fixed;
-	top: 0;
-	left: 0;
-	overflow: hidden;
-	}
-#fsvs-body{
-	height:100%;
-}
-.slide{
-	width:100%;
-	height:100%;
-}
-.snow {
-  display: block;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  position: fixed;
-  z-index:0;
-}
-.main{
-	width:90%;
-	margin:0 auto;
-	height:100%;
-	width:1100px;
-	}
-.main .logo{
-	width:100%;
-	text-align:center;
-	padding-top:20px;
-	}
-.main .listgame{
-	width:100%;
-	padding-top:20px;
-	float:left;
-	}
-.main .listgame .game{
-	width:29%;
-	height:160px;
-	background:#fff;
-	opacity:0.9;
-	float:left;
-	margin:20px 2%;
-	border-radius:10px;
-	position:relative;
-	}
-.main .listgame .gameoff{
-	background:#ccc;
-	}
-
-.main .listgame .game:hover{
-	-moz-transform:scale(1.05,1.05);
-	-webkit-transform:scale(1.05,1.05);
-	-o-transform:scale(1.05,1.05);
+.btn{
+	border:none;
+	background:#f39800;
+	color:#fff;
 	cursor:pointer;
-	opacity:1;
 	}
-.main .listgame .gameoff:hover{
-	-moz-transform:scale(1,1);
-	-webkit-transform:scale(1,1);
-	-o-transform:scale(1,1);
-	cursor: default;
-	opacity:0.98;
-	}
-.game a{
-	text-decoration:none;
-	color:#222;
-	}
-.game .gamename{
-	width:100%;
-	height:80px;
-	text-align:center;
-	font-size:26px;
-	color:#990;
-	font-weight:bold;
-	padding-top:10px;
-	}
-.game .gamename .title{
-	width:200px;
-	height:70px;
-	margin:0 auto;
-	}
-.game .gamename a{
-	display:block;
-	float:left;
-	padding-top:20px;
-	width:140px;
-	text-align:center;
-	}
-.game .gamename img{
-	float:left;
-	width:60px;
-	height:60px;
-	}
-.game .gameifo{
-	width:100%;
-	text-align:center;
-	}
-.game .gameifo a{
-	padding:0 10px;
-	}
-
-.game .gameifo a span{
-	padding:0 5px;
-	font-weight:bold;
-	}
-.game .gamefoot{
-	width:100%;
-	height:31px;
-	position:absolute;
-	bottom:0;
-	}
-.game .gamefoot .redu{
-	width:25px;
-	height:15px;
-	font-size:12px;
-	position:absolute;
-	left:80%;
-	border-radius:4px;
-	bottom:10px;
-	color:#A3A0A0;
-	}
-.game .gamefoot .gamelike{
-	width:80%;
-	height:10px;
-	background:#D3CDCD;
-	position:absolute;
-	bottom:0;
-	border-radius:2px;
-	}
-
-.main .gamedetail{
-	width:100%;
-	padding-top:40px;
-	}
-.main .back{
-	width:100px;
-	height:40px;
-	margin-left:10px;
-	float:left;
-	}
-.main .back a{
-	width:100px;
-	height:20px;
-	display:block;
-	text-align:center;
-	border-radius:4px;
-	border:1px solid #999;
-	text-decoration:none;
-	color:#fff;
-	padding:10px 5px;
-	}
-.main .back a:hover{
-	background:#fff;
-	opacity:0.85;
-	color:#222;
-	}
-.gamedetail .roomlist{
-	width:100%;
-	margin-top:10px;
-	padding:0px 10px;}
-.gamedetail .gameroomname{
-	text-align:center;
-	font-size:24px;
-	color:#fff;
-	padding-bottom:30px;
-	letter-spacing:5px;
-	}
-.gamedetail .roomlist .gameroom{
-	width:220px;
-	height:220px;
-	padding:10px;
-	position:relative;
-	float:left;
-	margin:15px;
-	}
-.gamedetail .roomlist .gameroom .roomtable{
-	width:100px;
-	height:100px;
-	padding:10px;
-	border:2px solid #fff;
-	position:absolute;
-	left:60px;
-	top:60px;}
-.gamedetail .roomlist .gameroom .roomtable .innertable{
-	width:114px;
-	height:114px;
-	border:1px solid #fff;
-	position:absolute;
-	left:2px;
-	top:2px;
-	color:#fff;
-	text-align:center;
-	}
-.gamedetail .roomlist .gameroom .roomtable .innertable a{
-	line-height:114px;
-	font-size:16px;
-	letter-spacing:2px;
-	}
-.gamedetail .roomlist .gameroom .play{
-	width:40px;
-	height:40px;
-	border:1px solid #fff;
-	position:absolute;
-	background:url(../images/player.png);
-	background-size:100%;
-	}
-.gamedetail .roomlist .gameroom .playtop{
-	top:10px;
-	left:100px;
-	}
-
-.gamedetail .roomlist .gameroom .ready{
-	background:url(../images/playeron.png);
-	background-size:100%;
-}
-.gamedetail .roomlist .gameroom .playbottom{
-	bottom:10px;
-	left:100px;
-	}
-
-.gamedetail .roomlist .gameroom .playleft{
-	left:10px;
-	top:100px;
-	}
-.gamedetail .roomlist .gameroom .playright{
-	right:10px;
-	top:100px;
-	}
-.gamedetail .roomlist .gameroom .nouser{
-	cursor:pointer;
-	background:none;
-}
-.main .roomdetail{
-	width:100%;
-	padding-top:40px;
-	}
-.roomdetail .gamebtn{
-	height:40px;
-	float:right;}
-.gameready{
-	width:100px;
-	height:40px;
-	border:1px solid #fff;
-	border-radius:8px;
+.enterbtn{
+	width:70%;
+	height:50px;
 	font-size:18px;
-	font-family:"微软雅黑";
-	text-align:center;
-	background:#fff;
-	opacity:0.9;}
-.gameready:hover{
-	-moz-transform:scale(1.05,1.05);
-	-webkit-transform:scale(1.05,1.05);
-	-o-transform:scale(1.03,1.05);
-	opacity:1;
-	box-shadow:0px 0px 8px #ccc;
+	margin:20px 0px;
+	border-radius:5px;
+	box-shadow: 0 2px 1px #999;
+	-moz-box-shadow: 0 2px 1px #999;
+	-webkit-box-shadow: 0 2px 1px #999;
 	}
-.roomdetail .roomname{
-	text-align:center;
-	font-size:24px;
-	color:#fff;
-	padding-bottom:30px;
-	letter-spacing:5px;
-	}
-.roomdetail .roomname span{
-	text-shadow: #ccc 1px 0 0,#ccc 0 1px 0,#ccc -1px 0 0,#ccc 0 -1px 0;
-	-webkit-text-shadow:#ccc 1px 0 0,#ccc 0 1px 0,#ccc -1px 0 0,#ccc 0 -1px 0;
-	-moz-text-shadow:#ccc 1px 0 0,#ccc 0 1px 0,#ccc -1px 0 0,#ccc 0 -1px 0;
-	}
-.roomdetail .roomdet_con{
+.all{
 	width:100%;
-	margin:10px 2%;
-	-background:#fff;
+	height:100%;
+	position:fixed;
+	}
+.enterbt{
+	width:60%;
+	margin:0 auto;
+	padding-top:40px;
+	}
+.enterbt div{
+	text-align:center;
+	}
+.inputroom{
 	position:relative;
 	}
-.roomdetail .con_table{
-	width:60%;
-	padding:10px;
-	background:#fff;
-	height:240px;
-	-opacity:0.8;
-	position:absolute;
-	left:20%;
-	top:120px;
-	border:1px solid #fff;
-	border-radius:40px;
-	}
-.roomdetail .table_inner{
-	width:94%;
-	background:#222;
-	height:230px;
-	position:absolute;
-	top:15px;
-	left:3%;
-	border:1px solid #fff;
+.inputroom .inputr{
+	width:70%;
+	height:40px;
+	border:2px solid #f39800;
 	border-radius:5px;
+	text-align:center;
+	position:absolute;
+	font-size:18px;
+	font-weight:bold;
+	color:#f39800;
+	right:-120%;
+	top:24px;
 	}
-.roomdetail .roomplayer{
-	width:100px;
-	height:100px;
+.all .arrow{
+	width:34%;
+	height:40px;
+	background:url(../images/arrow.png) no-repeat;
+	background-size:100%;
+	position:absolute;
+	border:none;
+	right:-135%;
+	top:32px;
+	}
+.enterbg{
+	width:100%;
+	margin:30px 0;
+	text-align:center;
+	}
+.enterbg img{
+	width:100%;
+	}
+.room{
+	padding:0 20px;
+	height:100%;
+	opacity:1;
+	display:none;
+	}
+.room .top{
+	width:100%;
+	height:25%;
+	margin-top:5%;
+	margin-bottom:3%;
+	float:left;
+	position:relative;
+	}
+.back{
+	position:absolute;
+	border:none;
+	background:url(../images/back.png);
+	width: 40px;
+	height: 40px;
+	top: -8px;
+	left: 69%;
+	background-size: 100%;
+	}
+.room .enemy{
+	width:55%;
+	height:100%;
+	float:left;
+	}
+.room .top .checkpoint{
+	width:35%;
+	height:62%;
+	float:left;
+	text-align:center;
+	color:#fff;
+	margin-top:10%;
+	background:#f5d7a4;
+	margin-left: 5%;
+	border-bottom-right-radius:8px;
+	border-bottom-left-radius:8px;
+	box-shadow:0 10px 2px #fff;
+	}
+.room .top .checkpoint h3{
+	line-height:40px;
+	font-weight:bold;
+	font-size: 22px;
+	}
+.room .gamenum{
+	display:inline-block;
+	margin-top:35%;
+	font-size:30px;
+	color:#D8A347;
+	text-align:center;
+	font-weight:bold;
+	}
+.room .enemy .gamenum{
+	font-size:14px;
+	}
+.room .ifo{
+	width:100%;
+	height:9%;
+	margin:3% 0;
+	background:#f5d7a4;
+	border-radius:5px;
+	position:relative;
+	}
+.room .ifo a{
+	padding-top:2%;
+	color:#fff;
+	font-size:18px;
+	display:inline-block;
+	height:75%;
+	width:33%;
+	text-align:center;
+	font-weight:bold;
+	letter-spacing:3px;
+	}
+.room .ifo .pk{
+	color:#f39800;
+	font-size:24px;
+	width:34%;
+	}
+.room .mygame{
+	margin-top:6%;
+	height:52%;
+	}
+.room .block{
+	width:21%;
+	height:28%;
+	float:right;
+	border-radius:5px;
+	margin:0 2%;
+	margin-bottom:6%;
+	text-align:center;
+	}
+.room .hidemyblock{
+	background:#f5d7a4;
+	box-shadow:0 6px 1px #fff;
+	}
+.room .hidemyblock.myblock{
+	background:#fff;
+	box-shadow:0 6px 1px #f5d7a4;
+	}
+.ready{
+	color:#f39800;
 	position:absolute;
 	}
-.roomdetail .playerleft {
-	left:110px;
-	top:170px;
-	background:url(../images/playerleft.png) no-repeat;
-	background-size:100%;
+.ready.my{
+	font-size:1px;
+	right:40%;
+	display:none;
+	top:140%;
 	}
-.roomdetail .playerright {
-	right:100px;
-	top:170px;
-	background:url(../images/playerright.png) no-repeat;
-	background-size:100%;
+.ready.you{
+	top:65%;
+	left:5%;
+	display:none;
 	}
-.roomdetail .playertop {
-	top:0px;
-	left:46%;
-	background:url(../images/player.png) no-repeat;
-	}
-.roomdetail .playerbottom {
-	top:310px;
-	left:46%;
-	background:url(../images/player.png) no-repeat;
-	}
-.main .roomdetail .readyleft{
-	background:url(../images/playerlefton.png);
-	background-size:100%;
+
+/*倒计时	*/
+.time{
+	width:160px;
+	height:160px;
+	border:20px solid #D77644;
+	border-radius:100%;
+	position:absolute;
+	top:30%;
+	left:25%;
+	text-align:center;
+	display:none;
+	opacity:0;
 }
-.main .roomdetail .readyright{
-	background:url(../images/playerrighton.png);
-	background-size:100%;
+.time a{
+	line-height:160px;
+	font-size:40px;
+	color:#D77644;
+	font-size:90px;
+	font-weight:bolder;
 }
-.roomdetail .ready{
-	background:url(../images/playeron.png);
-	background-size:100%;
-}
-.roomdetail .nouser{
-	background:none;
-}
-.roomdetail .myself{
-	background:url(../images/myself.png);
-	background-size:100%;
-}
-.roomdetail .myself.ready{
-	background:url(../images/myselfon.png);
-	background-size:100%;
-}
-.roomdetail .myselfleft{
-	background:url(../images/myselfleft.png);
-	background-size:100%;
-}
-.roomdetail .myselfleft.ready{
-	background:url(../images/myselflefton.png);
-	background-size:100%;
-}
-.roomdetail .myselfright{
-	background:url(../images/myselfright.png);
-	background-size:100%;
-}
-.roomdetail .myselfright.ready{
-	background:url(../images/myselfrighton.png);
-	background-size:100%;
+
+.block.error{
+    background-color: #b94a48 !important;
 }

@@ -1,75 +1,103 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html>
-<head>
-<meta charset="utf-8">
-<title>小林游戏</title>
-<link href="__PUBLIC__/assets/css/index.css" type="text/css" rel="stylesheet">
-<script type="text/javascript" src="__PUBLIC__/assets/js/jquery.min.js"></script>
-<script>
-window.base_url = "__MODULE__";
-window.root_url = "__ROOT__";
-WEB_SOCKET_SWF_LOCATION = "/swf/WebSocketMain.swf";
-WEB_SOCKET_DEBUG = true;
-if(window.location.hash){
-		window.location.href = '__MODULE__';
-}
-</script>
-</head>
-
+    <head>
+        <title>记数字--小林游戏</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta content="telephone=no" name="format-detection" />
+        <!-- UC强制全屏 -->
+        <meta name="full-screen" content="yes">
+        <!-- QQ强制全屏 -->
+        <meta name="x5-fullscreen" content="true">
+        <!-- UC应用模式 -->
+        <meta name="browsermode" content="application">
+        <!-- QQ应用模式 -->
+        <meta name="x5-page-mode" content="app">
+        <link href="__PUBLIC__/assets/css/index.css" type="text/css" rel="stylesheet">
+        <script src="__PUBLIC__/assets/js/libs/zepto/zepto.js"></script>
+        <script src="__PUBLIC__/assets/js/ToProgress.min.js"></script>
+        <script>
+            MY_NAME = '{$name}';
+            TIME = '{$time}';
+            HASH = '{$hash}';
+            ID = '{$id}';
+        </script>
+        <script src="__PUBLIC__/assets/js/SocketApi.js"></script>
+        <script src="__PUBLIC__/assets/js/Game.js" ></script>
+        <script src="__PUBLIC__/assets/js/Evn.js" ></script>
+    </head>
 <body>
-<canvas width="100%" height="100%" class="snow"></canvas>
-<div class="main" id="fsvs-body">
-	<div class="slide">
-    	<div class="logo">
-        	<img src="__PUBLIC__/assets/images/logo.png"/>
-        </div>
-        <div  class="listgame"> 
-        </div>
-    </div>
-    <div style="clear:both"></div>
-    <div class="gamedetail slide">       
-    </div>
-    <div style="clear:both"></div>
-    <div class="roomdetail slide">     
-    	
-    </div>
+<div class="all">
 
+	<div class="index">
+        <div class="enterbt">
+            <div><button  class="btn enterbtn new">创建房间</button></div>
+            <div class="inputroom">
+            <button  class="btn enterbtn js-inputroom">输入房号</button>
+            <input  class="inputr" type="text"/>
+            <a  class="arrow"></a>
+            </div>
+            <div><button  class="btn enterbtn quick">快速进入</button></div>
+        </div>
+        <div class="enterbg">
+            <img src="__PUBLIC__/assets/images/numbg.png"/>
+        </div>
+    </div>
     
+    <div class="room">
+    	<div class="top">
+    		<div class="enemy">
+                        <div class="block block_12 hidemyblock myblock"><a class="gamenum">10</a></div>
+                        <div class="block block_7 hidemyblock myblock"><a class="gamenum">8</a></div>
+                        <div class="block block_8 hidemyblock myblock"><a class="gamenum">6</a></div>
+        		<div class="block block_9 hidemyblock myblock"><a class="gamenum">12</a></div>
+                        
+        		
+                        <div class="block block_11 hidemyblock myblock"><a class="gamenum">11</a></div>
+                        <div class="block block_4 hidemyblock myblock"><a class="gamenum">4</a></div>
+                        <div class="block block_3 hidemyblock myblock"><a class="gamenum">2</a></div>
+                        <div class="block block_5 hidemyblock myblock"><a class="gamenum">9</a></div>
+                        
+                        <div class="block block_10 hidemyblock myblock"><a class="gamenum">5</a></div>
+        		<div class="block block_1 hidemyblock myblock"><a class="gamenum">3</a></div>
+        		<div class="block block_2 hidemyblock myblock"><a class="gamenum">45</a></div>
+        		<div class="block block_6 hidemyblock myblock"><a class="gamenum">78</a></div>
+            </div>
+             <button  class="back"></button>
+            <div class="checkpoint">
+            	<h3>关卡</h3>
+                <h3>2</h3>
+            </div>
+        </div>
+        <div style="clear:both"></div>
+        <div class="ifo">
+            <a id="opp_name">小明：2</a><a class="pk">PK</a><a id="my_name">小红：2</a>
+       		<div class="ready you">准备好了</div>
+            <div class="ready my">准备好了</div>
+        </div>
+        <div style="clear:both"></div>
+        <div class="mygame">
+            <div class="block block_6 hidemyblock myblock"><a class="gamenum">78</a></div>
+            <div class="block block_2 hidemyblock myblock"><a class="gamenum">45</a></div>
+            <div class="block block_1 hidemyblock myblock"><a class="gamenum">3</a></div>
+            <div class="block block_10 hidemyblock myblock"><a class="gamenum">5</a></div>
+            <div class="block block_5 hidemyblock myblock"><a class="gamenum">9</a></div>
+            <div class="block block_3 hidemyblock myblock"><a class="gamenum">2</a></div>
+            <div class="block block_4 hidemyblock myblock"><a class="gamenum">4</a></div>
+            <div class="block block_11 hidemyblock myblock"><a class="gamenum">11</a></div>
+            <div class="block block_9 hidemyblock myblock"><a class="gamenum">12</a></div>
+            <div class="block block_8 hidemyblock myblock"><a class="gamenum">6</a></div>
+            <div class="block block_7 hidemyblock myblock"><a class="gamenum">8</a></div>
+            <div class="block block_12 hidemyblock myblock"><a class="gamenum">10</a></div>
+        </div>
+   </div>
+   
+    <div class="time">
+    	<a>1</a>
+    </div> 
 </div>
-<script src="__PUBLIC__/assets/js/ToProgress.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/assets/js/jquery.let_it_snow.js"></script>
-<script src="__PUBLIC__/assets/js/fsvs.js"></script>
-<script src="__PUBLIC__/assets/js/mustache.min.js"></script>
-<script src="__PUBLIC__/assets/js/tem.js"></script>
-<script src="__PUBLIC__/assets/js/core.js"></script>
-<script type="text/javascript">
-$(document).ready( function() {
-	
-	if( $.fn.fsvs ) {
-		var slider = $.fn.fsvs({
-			speed : 1000,
-			bodyID : 'fsvs-body',
-			selector : '> .slide',
-			beforeSlide : function(data){core.load_page(data)},
-			arrowKeyEvents: false,
-			mouseWheelEvents: false,
-			mouseDragEvents : false,
-			touchEvents: false,
-			pagination: false,
-		});
-	}
-	window.fsvs = slider;
-	slider.init();
-	$("canvas.snow").let_it_snow();
-        
-        var opt = {
-            id: "{$id",
-            name: "{$name}",
-            hash: "{$hash}",
-            time: "{$time}"
-        };
-	core.init(opt);
-});
-</script>
-</body>
+</body>  
 </html>
+

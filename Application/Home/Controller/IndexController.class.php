@@ -10,7 +10,7 @@ class IndexController extends CommController
         $this->assign('id',UID);
         $this->assign('name',NAME);
         $this->assign('time',time());
-        $this->assign('hash',  md5(UID.time()));
+        $this->assign('hash',  md5(UID.time().'xiaolin'));
         $this->display();
     }
     
