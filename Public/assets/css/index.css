@@ -215,3 +215,6 @@ body{
 .block.error{
     background-color: #b94a48 !important;
 }
+.room_id{
+    color: #f39800;
+}

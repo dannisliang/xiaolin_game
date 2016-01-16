@@ -77,7 +77,7 @@ window.Game = (function($,name){
         }else{
             $(".you").hide();
         }
-        
+        $(".room_id span").html(room_id);
         if(ready){
             $(".my").show();
         }else{
