@@ -284,8 +284,9 @@ class Event
                 break;
             
             case 'init':
-                $_SESSION['ready'] = 'ready';
+                $_SESSION['ready'] = 'false';
                 break;
+            
             
         }
    }
