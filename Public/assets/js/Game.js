@@ -336,6 +336,8 @@ window.Game = (function($,name){
             if(level>1){
                 Game.end(true);
             }else{
+                
+                clearInterval(pro_int);
                 $(".back").show();
             }
             Game.init({opp_name:'',room_id:room_id,opp_ready:false});
