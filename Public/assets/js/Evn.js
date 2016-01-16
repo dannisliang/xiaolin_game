@@ -3,6 +3,9 @@
  * 
  */
  $(function(){
+     
+     var joining = false;
+     
      //显示输入框
     $('.js-inputroom').on("touchstart",function(){
         $(this).animate({width: '0',opacity:'0'}, "slow");
@@ -24,7 +27,7 @@
     $('.arrow').on("touchstart",function(){
         var val = $(".inputr").val();
         if(!val||val=='')return;
-        Api.send('{"type":"login","method":"join","client_name":"'+window.MY_NAME+',"room_id":"'+val+'"}');
+        Api.send('{"type":"login","method":"join","client_name":"'+window.MY_NAME+'","room_id":"'+val+'"}');
     })
     
     //准备好了

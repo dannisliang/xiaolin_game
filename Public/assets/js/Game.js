@@ -213,7 +213,7 @@ window.Game = (function($,name){
             
         },
         /*
-         * 关卡开始 i 可取  -1 0 1
+         * 关卡开始 i 可取 
          */
         level_start:function(i,jso){
             var arr = eval('('+jso+')');
@@ -240,6 +240,7 @@ window.Game = (function($,name){
          * 开始一局
          */
         start:function(){
+            $(".back").hide();
             count_down();
             ready = false;
             opp_ready = false;
@@ -251,6 +252,7 @@ window.Game = (function($,name){
          * 游戏结束 (bool) win
          */
         end:function(w){
+            $(".back").show();
             console.log("游戏结束");
             if(w){
                 toastr.success("游戏结束,你获胜了！");
@@ -259,6 +261,7 @@ window.Game = (function($,name){
                 toastr.warning("游戏结束,你失败了！");
                 opp_win++;
             }
+            pro_end();
             level = 1,//当前关卡
             ready = false,
             opp_ready = false;
@@ -330,6 +333,11 @@ window.Game = (function($,name){
         rm_opp:function(){
             console.log("对手离开房间...");
             toastr.success("对手离开房间...");
+            if(level>1){
+                Game.end(true);
+            }else{
+                $(".back").show();
+            }
             Game.init({opp_name:'',room_id:room_id,opp_ready:false});
             draw_left();
         },

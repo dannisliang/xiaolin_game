@@ -95,6 +95,7 @@ class Event
             case 'pong':
                 return;
             case 'login':
+                if($_SESSION['room_id'])return;
                 $method = $message_data['method'];
                 switch ($method) {
                     case 'new':
