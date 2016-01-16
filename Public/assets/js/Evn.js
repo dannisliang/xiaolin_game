@@ -35,8 +35,10 @@
         Game.ready();
     })
     
+    //触碰事件
     $(".mygame").on('touchstart','.hidemyblock',function(){
         var $this = $(this);
+        if($this.hasClass("myblock"))return;
         Game.touch($this.attr("index"));
     })
     
