@@ -160,6 +160,7 @@ window.Game = (function($,name){
         })
         toastr.success("作答时间！");
         pro_loop({t:touch_time,callback:function(){
+                in_touch = false;
                 Api.send('{"type":"timeout","right":false,"finish":true,"level":'+level+'}');
         }});
     };
