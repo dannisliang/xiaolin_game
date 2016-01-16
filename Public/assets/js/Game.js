@@ -14,7 +14,7 @@ window.Game = (function($,name){
         ready = false,
         opp_ready = false;//定时器id;//房间id
         
-    var see_time = 3000,//看的时长
+    var see_time = 2000,//看的时长
         touch_time = 10000,//选择时长
         down_time = 3000,//游戏开始倒计时时长
         tran_time = 1000,
@@ -134,6 +134,7 @@ window.Game = (function($,name){
      * 展示数字 开始记忆
      */
     var show_num = function(arr){
+        if(!opp_name)return;
         console.log("展示数字");
         pro_loop({t:see_time+1000*level});
         
@@ -149,6 +150,7 @@ window.Game = (function($,name){
      * 隐藏数字 开始touch
      */
     var hide_num = function(){
+        if(!opp_name)return;
         console.log("隐藏数字");
         in_touch = true;
         
@@ -161,6 +163,7 @@ window.Game = (function($,name){
         toastr.success("作答时间！");
         pro_loop({t:touch_time,callback:function(){
                 in_touch = false;
+                toastr.warning("作答超时！")
                 Api.send('{"type":"timeout","right":false,"finish":true,"level":'+level+'}');
         }});
     };
@@ -217,6 +220,7 @@ window.Game = (function($,name){
          * 关卡开始 i 可取 
          */
         level_start:function(i,jso){
+            if(!opp_name)return;
             var arr = eval('('+jso+')');
             touch_num = 1;
             level = i;
@@ -241,6 +245,7 @@ window.Game = (function($,name){
          * 开始一局
          */
         start:function(){
+            if(!opp_name)return;
             $(".back").hide();
             count_down();
             ready = false;
