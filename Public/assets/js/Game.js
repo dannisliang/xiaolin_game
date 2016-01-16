@@ -139,7 +139,7 @@ window.Game = (function($,name){
         
         creat_table(arr);
         show_table();
-        
+        toastr.success("记忆时间！");
         window.setTimeout(function(){
             pro_end();
             hide_num();
@@ -158,7 +158,7 @@ window.Game = (function($,name){
             $this.removeClass("error");
             $this.children(".gamenum").html("");
         })
-        
+        toastr.success("作答时间！");
         pro_loop({t:touch_time,callback:function(){
                 Api.send('{"type":"timeout","right":false,"finish":true,"level":'+level+'}');
         }});
@@ -174,14 +174,16 @@ window.Game = (function($,name){
      * 3 2 1 倒计时 用于游戏开始
      */
     var count_down = function(){
-        
+        window.setTimeout(function(){toastr.info("3...");},800);
+        window.setTimeout(function(){toastr.info("2...");},1600);
+        window.setTimeout(function(){toastr.info("1...");},2400);
         pro_loop({t:down_time});
     };
     /*
      * 关卡 过度
      */
     var tran_level = function(){
-        
+        toastr.info("关卡:"+level);
         
     };
     
@@ -217,6 +219,7 @@ window.Game = (function($,name){
             var arr = eval('('+jso+')');
             touch_num = 1;
             level = i;
+            $(".checkpoint .level").html(level);
             console.log("开始关卡："+level);
             tran_level();
             Api.send('{"type":"level_start"}');
@@ -250,8 +253,10 @@ window.Game = (function($,name){
         end:function(w){
             console.log("游戏结束");
             if(w){
+                toastr.success("游戏结束,你获胜了！");
                 win++;
             }else{
+                toastr.warning("游戏结束,你失败了！");
                 opp_win++;
             }
             level = 1,//当前关卡
@@ -277,6 +282,7 @@ window.Game = (function($,name){
             if(parseInt(num)!=touch_num){
                 window.Game.level_end();
                 $touch.addClass("error");
+                toastr.warning("你记错啦！");
                 right = "false";
                 finish = "true";
             }else {
@@ -298,6 +304,7 @@ window.Game = (function($,name){
             $touch.addClass("myblock");
             if(!right){
                 $touch.addClass("error");
+                toastr.success("对手失误啦...");
             }
             
             $touch.children(".gamenum").html("?");
@@ -322,6 +329,7 @@ window.Game = (function($,name){
          */
         rm_opp:function(){
             console.log("对手离开房间...");
+            toastr.success("对手离开房间...");
             Game.init({opp_name:'',room_id:room_id,opp_ready:false});
             draw_left();
         },
@@ -342,6 +350,7 @@ window.Game = (function($,name){
          * 对手准备
          */
         opp_ready:function(){
+            toastr.success("对手准备...");
             console.log("对手准备...");
             opp_ready = true;
             $('.you').show();

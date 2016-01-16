@@ -9,12 +9,7 @@
         $('.inputr').animate({right: '15%'}, "slow");
         $('.arrow').animate({right: '-22%'}, "slow");
     })
-    //加入房间
-    $('.arrow').bind("touchstart",function(){
-        var val = $(".inputr").val();
-        if(!val||val=='')return;
-        Api.send('{"type":"login","method":"join","client_name":"'+window.MY_NAME+',"room_id":"'+val+'"}');
-    })
+    
     
     //创建房间
     $('.new').bind("touchstart",function(){
@@ -26,7 +21,7 @@
     })
     
     //加入房间
-    $('.arrow').bind("touchstart",function(){
+    $('.arrow').on("touchstart",function(){
         var val = $(".inputr").val();
         if(!val||val=='')return;
         Api.send('{"type":"login","method":"join","client_name":"'+window.MY_NAME+',"room_id":"'+val+'"}');

@@ -16,13 +16,29 @@
         <!-- QQ应用模式 -->
         <meta name="x5-page-mode" content="app">
         <link href="__PUBLIC__/assets/css/index.css" type="text/css" rel="stylesheet">
-        <script src="__PUBLIC__/assets/js/libs/zepto/zepto.js"></script>
+        <!--<script src="__PUBLIC__/assets/js/libs/zepto/zepto.js"></script>-->
+        <link href="http://www.jqcool.net/demo/201406/jquery-toastr/toastr.css" type="text/css" rel="stylesheet">
         <script src="__PUBLIC__/assets/js/ToProgress.min.js"></script>
+        <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+        <script src="http://www.jqcool.net/demo/201406/jquery-toastr/toastr.js"></script>
         <script>
             MY_NAME = '{$name}';
             TIME = '{$time}';
             HASH = '{$hash}';
             ID = '{$id}';
+            toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "positionClass": "toast-top-full-width",
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "1500",
+            "extendedTimeOut": "500",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+            };
         </script>
         <script src="__PUBLIC__/assets/js/SocketApi.js"></script>
         <script src="__PUBLIC__/assets/js/Game.js" ></script>
@@ -68,7 +84,7 @@
              <button  class="back"></button>
             <div class="checkpoint">
             	<h3>关卡</h3>
-                <h3>2</h3>
+                <h3 class="level">1</h3>
             </div>
         </div>
         <div style="clear:both"></div>
