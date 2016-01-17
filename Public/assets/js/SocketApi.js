@@ -5,6 +5,7 @@
  */
 
 window.Api = (function($,name,time,hash,id){
+    "use strict";
     var ws;
     
     var connect = function(){

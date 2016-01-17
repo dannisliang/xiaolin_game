@@ -5,6 +5,7 @@
  */
 $(function(){
 window.Game = (function($,name){
+    "use strict";
     var win = 0,//我赢了几局
         opp_win = 0,//对手赢了几局
         level = 1,//当前关卡
@@ -27,7 +28,7 @@ window.Game = (function($,name){
     
     var touch_num = 1;//此时应该touch的数字
     
-    
+    var in_game = false;//是否正在游戏
     /*
      * 
      * @param {int} t 进度条时长  毫秒 
@@ -211,6 +212,7 @@ window.Game = (function($,name){
             pro_int = false,
             ready = false,
             opp_ready =  opt.opp_ready;
+            in_game = false;
             Api.send('{"type":"init"}');
             draw_all();
             default_table();
@@ -250,6 +252,7 @@ window.Game = (function($,name){
             count_down();
             ready = false;
             opp_ready = false;
+            in_game = true;
             draw_left();
             console.log("开始游戏...");
             Api.send('{"type":"start"}');
@@ -272,6 +275,7 @@ window.Game = (function($,name){
             level = 1,//当前关卡
             ready = false,
             opp_ready = false;
+            in_game = false;
             window.setTimeout(function(){
                 draw_all();
                 default_table();
@@ -324,6 +328,7 @@ window.Game = (function($,name){
             $('.room').hide();
             $('.index').show();
             Api.send('{"type":"out"}');
+            in_game = false;
             pro_end();
         },
         /*
@@ -354,7 +359,7 @@ window.Game = (function($,name){
          * 我准备
          */
         ready:function(){
-            if(ready)return;
+            if(ready||in_game)return;
             console.log("准备...");
             ready = true;
             Api.send('{"type":"ready"}');

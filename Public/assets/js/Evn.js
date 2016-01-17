@@ -3,7 +3,7 @@
  * 
  */
  $(function(){
-     
+     "use strict";
      var joining = false;
      
      //显示输入框
