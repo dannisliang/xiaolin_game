@@ -118,6 +118,7 @@ class Event
                             $cc[$i] = $count;
                             if($count==1){
                                 $room_id = $i;
+                                break;
                             }
                         }
                         if(!$room_id){

@@ -302,6 +302,7 @@ window.Game = (function($,name){
             }else {
                 if(touch_num==level+2){
                     finish = "true";
+                    window.Game.level_end();
                 }
                 touch_num++;
             }
